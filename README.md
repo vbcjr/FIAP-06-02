@@ -7,7 +7,7 @@ Para efetuar a busca de hotéis e testar o funcionamento das API 's, é necessá
 
 Devs: 
 Jimmy Wesley Maciel & 
-Vlamir Baboza Carneiro Junior 
+Vlamir Baboza Carneiro Junior & Lucas Siqueira
 
 ## Code Samples 
 
@@ -42,3 +42,11 @@ Implementação JS das API’s
 
 - Utilizar o API Key da integração com RapidAPI para gerar a conexão com a base de busca de hotéis, por meio de um end-point.
 - Utilizamos a API do Google Maps para criar um iframe com a localização do hotel.
+
+## HerokuApp
+
+Arquivos criados para rodar aplicação no HerokuApp
+```
+- composer.json
+- index.php
+```
