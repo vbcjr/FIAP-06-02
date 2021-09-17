@@ -1,0 +1,824 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background-color: #f9f9f9;
+}
+
+
+.box_acessibilidade {
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    background-color: #121212;
+}
+
+.acessibilidade {
+    width: 16%;
+    height: 7vh;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.4em;
+    margin-left: 25px;
+    margin-right: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#controls{
+    filter:invert(100%) ;
+    width: 200px;
+    height: 25px;
+}
+
+.box_item {
+    width: 20%;
+    height: 7vh;
+    display: flex;
+    cursor: pointer;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.disclaimer {
+    width: 80%;
+    height: 7vh;
+    display: flex;
+    align-items:center;
+    justify-content:flex-start;
+    color: #fff;
+    font-size: 1.2em
+}
+
+.icone_acessibilidade {
+    padding: 16px;
+    height: 7vh;
+    box-sizing: border-box;
+}
+
+
+ul {
+    list-style: none;
+  }
+
+.header a {
+    text-decoration: none;
+    color: #F24405;
+  }
+
+.header a:hover {
+    width: 50px;
+    height: 100px;
+    color: #033E8C;
+    font-weight: 700;
+    transition: 0.2s;
+}
+.header {
+    width: 100%;
+    height: 50px;
+    background-color: #FFF;
+    margin-top: 0px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.header__logo img {
+    height: 40px;
+    padding: 0px 60px;
+    box-sizing: border-box;
+}
+
+.header__icons{
+    font-size: 18px;
+}
+
+.header__menu ul {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 30px 0 0;  
+  }
+
+.links__menu {  
+    display: flex;
+    justify-content:flex-end;
+  }
+
+  .links__menu a{
+    margin: 0 30px 0 0;
+  }
+
+.pesquisar{
+    width: 98,5vw;
+    height: 30vh;
+    margin: 0 auto 20px;
+    background-image: radial-gradient(circle at 77% 43%, rgba(168, 168, 168, 0.04) 0%, rgba(168, 168, 168, 0.04) 50%, rgba(10, 10, 10, 0.04) 50%, rgba(10, 10, 10, 0.04) 100%), radial-gradient(circle at 33% 65%, rgba(248, 248, 248, 0.04) 0%, rgba(248, 248, 248, 0.04) 50%, rgba(228, 228, 228, 0.04) 50%, rgba(228, 228, 228, 0.04) 100%), radial-gradient(circle at 92% 79%, rgba(152, 152, 152, 0.04) 0%, rgba(152, 152, 152, 0.04) 50%, rgba(28, 28, 28, 0.04) 50%, rgba(28, 28, 28, 0.04) 100%), radial-gradient(circle at 91% 13%, rgba(41, 41, 41, 0.04) 0%, rgba(41, 41, 41, 0.04) 50%, rgba(214, 214, 214, 0.04) 50%, rgba(214, 214, 214, 0.04) 100%), linear-gradient(270deg, rgb(242, 116, 5), rgb(5, 199, 242));
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.pesquisar h2{
+    color: #fff;
+    margin: 30px 0 5px 25px;
+    font-size: 1.8rem;
+}
+
+.base {
+    width: 85vw;
+    height:10vh;
+    margin: 10px auto;
+    background-color: rgb(5, 199, 242);
+    display: flex;
+    justify-content: center;
+}
+
+.tipo{
+    width: 20%;
+    height: 80%;
+    /* background-color: #FFF; */
+    margin: 5px ;
+    display:flex;
+}
+
+.buscar{
+    width: 30%;
+    height: 80%;
+    /* background-color: #FFF; */
+    margin: 5px ;
+    display:flex;
+}
+
+.datas{
+    width: 12,5%;
+    height: 80%;
+    /* background-color: #FFF; */
+    margin: 5px ;
+    display:flex;
+}
+
+.tipo_de_viagem,
+#tipo_de_viagem,
+#buscar_hoteis,
+#data {
+    width: 100%;
+    height: 100%;
+    padding: 3px 5px;
+    color: #F24405;
+    border: none;
+}
+
+::placeholder{
+    color: #F24405;
+}
+
+.botao{
+    width: 20%;
+    height: 80%;
+    background-color: #F24405;
+    border-radius: 10px;
+    margin: 5px;
+    text-align: center;
+}
+
+.botao h3{
+    font-size: 1.8rem;
+    color: #FFF;
+    margin-top: 10px;
+}
+
+.botao:hover{
+    background-color: #033e8c;
+    color: #fff;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+}
+
+/* CONTAINER PRINCIPAL ----- */
+
+.cx_principal {
+    /* background-color: rgba(114, 168, 250, 0.404); */
+    height: 50vh;
+    width: 98vw;
+    margin-bottom: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CAIXAS  ^^^^^ */
+
+.cx_fotohotel {
+    height: 100%;
+    width: 25%;
+}
+
+.cx_informacoes {
+    /* background-color: rgba(255, 200, 183, 0.404); */
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 2%;
+}
+
+.cx_iframe {
+    height: 100%;
+    width: 25%;
+}
+
+/* ---------- */
+
+
+iframe {
+    border-radius: 2%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.icon {
+    margin-right: 2px;
+    font-size: 1rem;
+}
+
+.fas {
+    padding-right: 4px;
+}
+
+
+/* FOTO DO HOTEL ----- */
+#fotodohotel {
+    border: solid 1px #999;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2%;
+}
+
+/* NOME DO HOTEL ----- */
+.bx_hotel {
+    height: 15%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+
+}
+
+/* DESCRIÇÃO DO HOTEL ----- */
+.bx_descricao {
+    height: 15%;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    margin: 1% 0;
+
+}
+
+
+
+/*  MELHOR OPÇÃO,ESTRELAS E AVALIAÇÃO -----*/
+.bx_avaliacao {
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    margin: 2% 0;
+}
+
+#tagopcao {
+    width: calc((100%-1em)/6);
+    height: 70%;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 0 1%;
+    margin-right: 15px;
+}
+
+#tagestrela {
+    color: rgb(255, 200, 0);
+    width: auto;
+    font-size: 1.1rem;
+    height: 70%;
+    letter-spacing: 0.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 0 3% 0 0;
+}
+
+.estrela_cinza {
+    color: hsla(0, 0%, 66%, 0.5);
+}
+
+#tagavalie {
+    border: solid 1px rgb(151, 151, 151);
+    background-color: rgba(255, 49, 13, 0.3);
+    width: 35%;
+    height: 70%;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 0 1%;
+}
+
+/*  MELHOR OPÇÃO,ESTRELAS E AVALIAÇÃO ^^^^^*/
+
+
+/* VALOR E INFORMAÇÕES (KM E TEMPO) -----*/
+.bx_valor {
+    height: 15%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 1% 0;
+
+}
+
+#vl_diaria {
+    border: solid 1px black;
+    background-color: rgb(51, 196, 51);
+    width: 25%;
+    height: 70%;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 0 1%;
+    margin-right: 5%;
+}
+
+#vl_km {
+    border: solid 1px black;
+    background-color: rgb(219, 243, 155);
+    width: 20%;
+    height: 70%;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 0 1%;
+    margin-right: 1%;
+
+}
+
+#vl_tempo {
+    border: solid 1px black;
+    background-color: rgb(219, 243, 155);
+    width: 20%;
+    height: 70%;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 0 1%;
+    margin-right: 1%;
+}
+
+#vl_local {
+    width: 30%;
+    height: 70%;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    padding: 0 1%;
+}
+
+
+/* LINKS DE ACESSO -----*/
+
+.bx_acesso {
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    margin: 1% 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+#lk_site {
+    border: solid 1px black;
+    background-color: rgb(51, 73, 196);
+    color: #fff;
+    letter-spacing: 1px;
+    width: 20%;
+    height: 70%;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 0 1%;
+    margin-right: 5%;
+}
+
+#lk_rota {
+    border: solid 1px black;
+    background-color: rgb(243, 155, 189);
+    width: 20%;
+    height: 70%;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 0 1%;
+    margin-right: 1%;
+}
+
+
+
+
+
+
+.rodape {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: radial-gradient(circle at 77% 43%, rgba(168, 168, 168, 0.04) 0%, rgba(168, 168, 168, 0.04) 50%, rgba(10, 10, 10, 0.04) 50%, rgba(10, 10, 10, 0.04) 100%), radial-gradient(circle at 33% 65%, rgba(248, 248, 248, 0.04) 0%, rgba(248, 248, 248, 0.04) 50%, rgba(228, 228, 228, 0.04) 50%, rgba(228, 228, 228, 0.04) 100%), radial-gradient(circle at 92% 79%, rgba(152, 152, 152, 0.04) 0%, rgba(152, 152, 152, 0.04) 50%, rgba(28, 28, 28, 0.04) 50%, rgba(28, 28, 28, 0.04) 100%), radial-gradient(circle at 91% 13%, rgba(41, 41, 41, 0.04) 0%, rgba(41, 41, 41, 0.04) 50%, rgba(214, 214, 214, 0.04) 50%, rgba(214, 214, 214, 0.04) 100%), linear-gradient(270deg, rgb(242, 116, 5), rgb(5, 199, 242));
+    background-size: cover;
+    color: #FFF;
+  }
+
+.midias{
+    display: flex;
+    font-size: 4vh;
+}
+
+.midias a{
+    margin: 10px 10px 0;
+    color: #fff;
+}
+/* media queries */
+
+@media (max-width: 1920px){
+    .tipo{
+        width: 30%;
+        height: 84%;    
+    }
+
+    .acessibilidade_mobile {
+        display: none;
+    }
+
+}
+
+@media (max-width: 960px){
+    /* .botao h3{
+        margin-top: 25px;
+    } */
+
+    .disclaimer {
+        font-size: 0.8em
+    }
+
+    .acessibilidade {
+        font-weight: 400;
+        font-size: 1em;
+    }
+  
+    .cx_principal {
+        /* background-color: rgba(114, 168, 250, 0.404); */
+        height: 90vh;
+        width: auto;
+        margin-bottom: 5vh;
+        flex-wrap: wrap;
+    }
+
+    /* CAIXAS  ^^^^^ */
+    .cx_fotohotel {
+        height: 30%;
+        width: 100%;
+    }
+
+    .cx_informacoes {
+        height: 60%;
+        width: 60vw;
+        margin-bottom: 1%;
+        margin-top: 1%;
+        float: left
+    }
+
+    .cx_iframe {
+        height: auto;
+        width: 30vw;
+
+    }
+
+    .bx_hotel {
+        height: 15%;
+        font-size: 1.5rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+    }
+
+    #bx_descricao {
+        margin: 0;
+    }
+
+    #tagavalie {
+        padding: 1% 1%;
+        width: 40%;
+        height: 40%;
+        font-size: 0.9rem;
+    }
+
+    #vl_diaria {
+        padding: 1% 1%;
+        width: 40%;
+        height: 40%;
+        font-size: 0.9rem;
+    }
+
+    #vl_km,
+    #vl_tempo {
+        padding: 1% 1%;
+        width: 30%;
+        height: 40%;
+        font-size: 0.9rem;
+    }
+
+    #lk_site,
+    #lk_rota {
+        padding: 1% 1%;
+        width: 25%;
+        height: 40%;
+        font-size: 0.9rem;
+    }
+
+}
+
+@media (max-width: 768px) {  
+    .header {
+        background-color: #fff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+
+    .header__logo img {
+        height: 30px;
+    }
+
+    .acessibilidade_mobile {
+        width: 300px;
+        height: 50vh;
+        /* padding-right: 1vh; */
+        background-color: #f9f9f9;
+        right: -100vw;
+        top: 5vh;
+        z-index: 2;
+        transition: 0.5s;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+    
+
+    .linha {
+      width: 30px;
+      height: 3px;
+      background: #f24405;
+      margin: 5px;
+    }
+    .header__menu {
+        position: relative;
+    }
+
+    .hamburguer {
+      position: absolute;
+      right: 0;
+      top: -15px;
+      cursor: pointer;
+    }
+    .links__menu {
+      width: 300px;
+      height: 50vh;
+      /* padding-right: 1vh; */
+      background-color: #f9f9f9;
+      position: fixed;
+      right: -100vw;
+      top: 5vh;
+      z-index: 2;
+      transition: 0.5s;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .box_acessibilidade {
+        display: none;
+    }
+
+    .titulo_acessibilidade {
+        font-size: 1.1em;
+    }
+
+    .links__menu li {
+        text-align: center;
+        font-size: 1.2em;
+    }
+
+    .icone_menu {
+        width: 25px;
+        height: 20px;
+        margin-top: 16px;
+        margin-right: 16px;
+    }
+    .links__menu.open {
+      right: 0;
+    }
+    
+    .pesquisar{
+        width: 100%;
+        height: 90%;
+    }
+
+    .pesquisar h2{
+        margin-top: 60px;
+    }
+
+    .base{
+        width:90%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tipo{
+        width: 100%;
+        height: 50%;
+        margin: 5px auto;
+    }
+
+    .buscar{
+        width: 97%;
+        height: 50%;
+        margin: 5px auto;
+    }
+    
+    .datas{
+        width: 100%;
+        height: 50%;
+    }
+
+    .botao{
+        width: 20%;
+        margin: 4px;
+    }
+
+    /* .botao h3{
+        font-size: 1.4rem;
+    } */
+    .midias{
+        font-size: 2vh;
+        margin-bottom: 20px;
+    }
+
+
+.cx_principal {
+        /* background-color: rgba(114, 168, 250, 0.404); */
+        height: 130vh;
+        width: auto;
+        margin-bottom: 5vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* CAIXAS  ^^^^^ */
+
+    .cx_fotohotel {
+        height: 30%;
+        width: 100%;
+    }
+    
+    .cx_informacoes {
+        /* background-color: rgba(255, 200, 183, 0.404); */
+        height: 30%;
+        width: 100%;
+        margin-bottom: 1%;
+        margin-top: 1%;
+        padding: 0 5%;
+    }
+    
+    .cx_iframe {
+        height: 30%;
+        width: 100%;
+        padding: 0 5%;
+
+    }
+
+    .bx_hotel {
+        height: 15%;
+        font-size: 1.5rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+    }
+
+    .bx_descricao {
+     font-size: 1.1rem;
+
+    }
+
+    #tagopcao {
+        padding: 1% 1%;
+        width: 20%;
+        height: 40%;
+        font-size: 1rem;
+
+    }
+
+    #tagestrela {
+        padding: 1% 1%;
+        width: 40%;
+        height: 50%;
+        font-size: 0.9rem;
+        letter-spacing: 0;
+    }
+
+    #tagavalie {
+        padding: 1% 1%;
+        width: 40%;
+        height: 50%;
+        font-size: 0.9rem;
+    }
+
+    #vl_diaria {
+        padding: 1% 1%;
+        width: 40%;
+        height: 50%;
+        font-size: 0.9rem;
+    }
+
+    #vl_km,
+    #vl_tempo {
+        padding: 1% 1%;
+        width: 40%;
+        height: 50%;
+        font-size: 0.9rem;
+    }
+
+    #lk_site,
+    #lk_rota {
+        padding: 1% 1%;
+        width: 40%;
+        height: 50%;
+        font-size: 0.9rem;
+    }
+
+
+  }
+  
+  @media (max-width: 450px) {
+   
+
+    .botao h3{
+        font-size: 1rem;
+        margin-top: 8px;
+    }
+}

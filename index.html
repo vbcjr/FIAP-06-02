@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <link rel="shortcut icon" type"image/png" href="./img/favicon-16x16.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Traveller</title>
+</head>
+
+<body>
+    <section class="container banner">
+        <header class="header">
+            <nav class="header__logo">
+                <img src="./img/logo-reduzido.png" alt="" srcset="">
+            </nav>
+            <nav class="header__icons">
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            </nav>
+            <nav class="header__menu">
+                <ul class="links__menu">
+                    <li><a href="#" class="header__menu__item">Compras</a></li>
+                    <li><a href="#" class="header__menu__item">Hoteis</a></li>
+                    <li><a href="#" class="header__menu__item">Gastronomia</a></li>
+                    <li><a href="#" class="header__menu__item">Eventos</a></li>
+                    <li><a href="#" class="header__menu__item">Lazer</a></li>
+                </ul>
+                <div class="hamburguer">
+                    <div class="linha"></div>
+                    <div class="linha"></div>
+                    <div class="linha"></div>
+                </div>
+        </header>
+    </section>
+    <section class="container pesquisar">
+        <h2>Encontre seu hotel</h2>
+        <nav class="base">
+            <nav class="tipo">
+                <form action="" method="POST" id="" class="tipo_de_viagem">
+                    <select name="" id="tipo_de_viagem">
+                        <option value="0" disabled selected>Tipo de Viagem</option>
+                        <option value="1">Descanso</option>
+                        <option value="2">Trabalho</option>
+                    </select>
+            </nav>
+            <nav class="buscar">
+                <form action="" method="POST" id="" class="buscar_hoteis">
+                    <input type="search" id="buscar_hoteis" placeholder="Ex: Hotel Blue Tree Paulista" autofocus>
+                </form>
+            </nav>
+
+            <nav class="datas">
+                <form form action="" method="POST" id="" name="dados">
+                    <input type="date" id="data" placeholder="Check-in">
+                </form>
+                <form form action="" method="POST" id="" name="dados">
+                    <input type="date" id="data" placeholder="Check-in">
+                </form>
+            </nav>
+            <nav class="datas">
+
+            </nav>
+            <nav class="botao">
+                <h3 onclick="myFunction()">Buscar</h3>
+            </nav>
+        </nav>
+    </section>
+
+    <section class="corpo" id="lista-hoteis">
+    </section>
+
+    <footer class="rodape">
+        <nav class="midias">
+            <a href=""><i class="fab fa-facebook"></i></a>
+            <a href=""><i class="fab fa-instagram-square"></i></a>
+        </nav>
+        <p>
+            Direitos reservados - Projeto Traveller
+        </p>
+    </footer>
+    <script src="./js/menu.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly&channel=2"
+        async></script>
+
+    <script>
+        //Cria uma variavel para template para ser usado no retorno da API de Hoteis
+        var template = `
+    <div class="cx_principal" id="{{hotel-id}}">
+        <div class="cx_fotohotel"><img id="fotodohotel" src="{{hotel-img}}" alt="Foto do Hotel">
+        </div>
+        <div class="cx_informacoes">
+            <div class="bx_hotel"><i class="fas fa-hotel"></i>{{hotel-nome}}</div>
+            <div class="bx_descricao">{{hotel-descricao}}</div>
+            <!-- AVALIAÇÃO  -->
+            <div class="bx_avaliacao">
+                <div id="tagopcao"><i class="icon far fa-thumbs-up"></i>{{hotel-tipo}}</div>
+                <div id="tagestrela">
+                    <i class="icon fas fa-star"></i>
+                    <i class="icon fas fa-star"></i>
+                    <i class="icon fas fa-star"></i>
+                    <i class="icon fas fa-star estrela_cinza"></i>
+                    <i class="icon fas fa-star estrela_cinza"></i>
+                </div>
+                <a id="tagavalie" href="#"><i class="icon icon fas fa-tasks"></i>Avaliar este Hotel</a>
+
+            </div>
+            <!-- VALOR E INFORMAÇÕES (KM E TEMPO) -->
+            <div class="bx_valor">
+                <div id="vl_diaria"><i class="icon fas fa-money-bill-wave"></i>R$ {{hotel-preco}} </div>
+                <div id="vl_km"><i class="icon fas fa-car"></i>{{hotel-cidade}}</div>
+            </div>
+            <div class="bx_acesso">
+                <a id="lk_site" href="https://www.google.com/search?q={{hotel-site}}"><i
+                        class="icon fas fa-globe"></i>Site</a>
+                <a id="lk_rota" href="https://goo.gl/maps/gcnTPe36rEGVnNJm8"><i class="icon fas fa-route"></i>Rotas</a>
+            </div>
+        </div>
+        <div class="cx_iframe" id="map_{{hotels}}">
+        
+         </div>
+    </div>  `;
+
+        //Função responsavel por buscar hoteis na API e exibir resultado
+        function myFunction() {
+            debugger;
+
+            //pega o valor da busca 
+            var localidade = document.getElementById("buscar_hoteis").value;
+
+            //URL da API de HOTEIS
+            var url = "https://booking-com.p.rapidapi.com/v1/hotels/locations?locale=pt-br&name=" + localidade;
+
+            //Seta informações de acesso a API.
+            var myHeaders = new Headers();
+            myHeaders.append("x-rapidapi-host", "booking-com.p.rapidapi.com");
+            myHeaders.append("x-rapidapi-key", "05d8264162msh42ecfdb063b6b96p1aac54jsn4e84adfd5b67");
+
+            var requestOptions = {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+
+            fetch(url, requestOptions)
+                .then(response => response.text())
+                .then(result => {
+                        console.log(result);
+                        var lista = "";
+                        var mapas = [];
+
+                        //Transforma o retorno da API em Json para ser tratado como Arrey
+                        const hoteis = JSON.parse(result);
+                        hoteis.forEach(hotel => {
+                            //Cria objeto com Latitude e Longetude
+                            const myLatLng = {
+                                lat: hotel.latitude,
+                                lng: hotel.longitude
+                            };
+
+                            mapas.push({
+                                posicao: myLatLng,
+                                id: "map_" + hotel.dest_id,
+                                nome: hotel.name
+                            });
+
+                            //Subistitui os html pelas informações retornadas da API.
+                            lista += template
+                                .replace("{{hotel-id}}", hotel.dest_id)
+                                .replace("{{hotel-nome}}", hotel.name)
+                                .replace("{{hotel-site}}", hotel.name)
+                                .replace("{{hotel-descricao}}", hotel.label)
+                                .replace("{{hotel-tipo}}", hotel.dest_type)
+                                .replace("{{hotel-img}}", hotel.image_url.replace("150x150", "1024x800"))
+                                .replace("{{hotel-cidade}}", hotel.city_name)
+                                .replace("{{hotel-endereco}}", hotel.timezone)
+                                .replace("{{hotels}}", hotel.dest_id)
+                                .replace("{{hotel-preco}}", parseFloat((hotel.hotels)).toFixed(2));
+
+                        });
+
+                        //Imprime Resultado na tela
+                        document.getElementById("lista-hoteis").innerHTML = lista;
+
+                        //Carrega mapas com as posições dos Hoteis
+                        if (lista.length > 0)
+                            mapas.forEach(item => {
+                                initMap(item.posicao, item.id, item.nome);
+                            })
+
+                    }
+
+                )
+                .catch(error => console.log('error', error));
+        }
+    </script>
+
+    <script>
+        //Função para carregar os Mapas
+        function initMap(myLatLng, id_hotel, title) {
+
+            const map = new google.maps.Map(document.getElementById(id_hotel), {
+                zoom: 15,
+                center: myLatLng,
+            });
+
+            new google.maps.Marker({
+                position: myLatLng,
+                map,
+                title: title,
+            });
+        }
+    </script>
+
+</body>
+
+</html>
