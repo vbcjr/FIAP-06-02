@@ -11,6 +11,8 @@ Vlamir Baboza Carneiro Junior & Lucas Siqueira
 
 ## Code Samples 
 
+Site Samples: https://gulliver-travel.herokuapp.com/
+
 API Booking.com
 ```
 'GET',
@@ -25,7 +27,7 @@ API Booking.com
 
 API Google Maps
 ```
-GET https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly
+GET https://maps.googleapis.com/maps/api/js?key=AIzaSyCoPypNmHjVWxUrZ51RqBh00-ku1YkEIYk&callback=initMap&libraries=&v=weekly
 
 let map;
 function initMap() {
