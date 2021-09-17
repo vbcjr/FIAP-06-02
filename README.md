@@ -7,9 +7,11 @@ Para efetuar a busca de hotéis e testar o funcionamento das API 's, é necessá
 
 Devs: 
 Jimmy Wesley Maciel & 
-Vlamir Baboza Carneiro Junior 
+Vlamir Baboza Carneiro Junior & Lucas Siqueira
 
 ## Code Samples 
+
+Site Samples: https://gulliver-travel.herokuapp.com/
 
 API Booking.com
 ```
@@ -25,7 +27,7 @@ API Booking.com
 
 API Google Maps
 ```
-GET https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly
+GET https://maps.googleapis.com/maps/api/js?key=AIzaSyCoPypNmHjVWxUrZ51RqBh00-ku1YkEIYk&callback=initMap&libraries=&v=weekly
 
 let map;
 function initMap() {
@@ -42,3 +44,11 @@ Implementação JS das API’s
 
 - Utilizar o API Key da integração com RapidAPI para gerar a conexão com a base de busca de hotéis, por meio de um end-point.
 - Utilizamos a API do Google Maps para criar um iframe com a localização do hotel.
+
+## HerokuApp
+
+Arquivos criados para rodar aplicação no HerokuApp
+```
+- composer.json
+- index.php
+```
