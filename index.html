@@ -157,17 +157,16 @@
                         //Transforma o retorno da API em Json para ser tratado como Arrey
                         const hoteis = JSON.parse(result);
                         hoteis.forEach(hotel => {
+
+                    try {
+                          
+
                             //Cria objeto com Latitude e Longetude
                             const myLatLng = {
                                 lat: hotel.latitude,
                                 lng: hotel.longitude
                             };
 
-                            mapas.push({
-                                posicao: myLatLng,
-                                id: "map_" + hotel.dest_id,
-                                nome: hotel.name
-                            });
 
                             //Subistitui os html pelas informações retornadas da API.
                             lista += template
@@ -182,8 +181,15 @@
                                 .replace("{{hotels}}", hotel.dest_id)
                                 .replace("{{hotel-preco}}", parseFloat((hotel.hotels)).toFixed(2));
 
+                                mapas.push({
+                                posicao: myLatLng,
+                                id: "map_" + hotel.dest_id,
+                                nome: hotel.name
+                            });
+                        } catch (error) {}
+            
                         });
-
+       
                         //Imprime Resultado na tela
                         document.getElementById("lista-hoteis").innerHTML = lista;
 
