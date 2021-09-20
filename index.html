@@ -177,6 +177,7 @@
             </ul>
           </div>
         </div>
+<<<<<<< HEAD
       </div>
       <div class="col-xl-4">
         <div class="card">
@@ -248,6 +249,101 @@
                   nome: hotel.name
                 });
               } catch (error) {}
+=======
+        <div class="cx_iframe" id="map_{{hotels}}">
+        
+         </div>
+    </div>  `;
+
+        //Função responsavel por buscar hoteis na API e exibir resultado
+        function myFunction() {
+            debugger;
+
+            //pega o valor da busca 
+            var localidade = document.getElementById("buscar_hoteis").value;
+
+            //URL da API de HOTEIS
+            var url = "https://booking-com.p.rapidapi.com/v1/hotels/locations?locale=pt-br&name=" + localidade;
+
+            //Seta informações de acesso a API.
+            var myHeaders = new Headers();
+            myHeaders.append("x-rapidapi-host", "booking-com.p.rapidapi.com");
+            myHeaders.append("x-rapidapi-key", "fb8d9b1f46msh43e2e951aadc919p1c610ajsn17111f74430f");
+
+            var requestOptions = {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+
+            fetch(url, requestOptions)
+                .then(response => response.text())
+                .then(result => {
+                        console.log(result);
+                        var lista = "";
+                        var mapas = [];
+
+                        //Transforma o retorno da API em Json para ser tratado como Arrey
+                        const hoteis = JSON.parse(result);
+                        hoteis.forEach(hotel => {
+
+                    try {
+                          
+
+                            //Cria objeto com Latitude e Longetude
+                            const myLatLng = {
+                                lat: hotel.latitude,
+                                lng: hotel.longitude
+                            };
+
+
+                            //Subistitui os html pelas informações retornadas da API.
+                            lista += template
+                                .replace("{{hotel-id}}", hotel.dest_id)
+                                .replace("{{hotel-nome}}", hotel.name)
+                                .replace("{{hotel-site}}", hotel.name)
+                                .replace("{{hotel-descricao}}", hotel.label)
+                                .replace("{{hotel-tipo}}", hotel.dest_type)
+                                .replace("{{hotel-img}}", hotel.image_url.replace("150x150", "1024x800"))
+                                .replace("{{hotel-cidade}}", hotel.city_name)
+                                .replace("{{hotel-endereco}}", hotel.timezone)
+                                .replace("{{hotels}}", hotel.dest_id)
+                                .replace("{{hotel-preco}}", parseFloat((hotel.hotels)).toFixed(2));
+
+                                mapas.push({
+                                posicao: myLatLng,
+                                id: "map_" + hotel.dest_id,
+                                nome: hotel.name
+                            });
+                        } catch (error) {}
+            
+                        });
+       
+                        //Imprime Resultado na tela
+                        document.getElementById("lista-hoteis").innerHTML = lista;
+
+                        //Carrega mapas com as posições dos Hoteis
+                        if (lista.length > 0)
+                            mapas.forEach(item => {
+                                initMap(item.posicao, item.id, item.nome);
+                            })
+
+                    }
+
+                )
+                .catch(error => console.log('error', error));
+        }
+    </script>
+
+    <script>
+        //Função para carregar os Mapas
+        function initMap(myLatLng, id_hotel, title) {
+
+            const map = new google.maps.Map(document.getElementById(id_hotel), {
+                zoom: 15,
+                center: myLatLng,
+            });
+>>>>>>> 287239038b0bbc11c4e6b1c6cff59ce6568d87b8
 
             });
 
