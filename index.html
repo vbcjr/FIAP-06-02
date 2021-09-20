@@ -76,7 +76,7 @@
   </section>
 
 
-  <section class="card">
+  <section class="card banner">
     <img class="card-img" src="./image/rio.jpg" alt="Card image">
     <div class="card-img-overlay">
       <h2 class="card-title chamada">TOP 1</h2>
@@ -91,14 +91,14 @@
     <h2>Dicas Úteis</h2>
     <div class="card-group">
       <div class="card teste">
-        <img class="card-img-top " src="./image/museu.jpg" alt="Card image cap">
+        <img class="card-img-top" src="./image/museu.jpg" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Arquitetura</h5>
           <p class="card-text">O Museu do Amanhã destaca-se por sua arquitetura inovadora.</p>
         </div>
       </div>
       <div class="card teste">
-        <img class="card-img-top img-fluid" src="./image/metro-rio.jfif" alt="Card image cap">
+        <img class="card-img-top" src="./image/metro-rio.jfif" alt="Card image cap">
         <div class="card-body ">
           <h5 class="card-title">Transporte</h5>
           <p class="card-text">O Metrô da cidade do Rio de Janeiro é a melhor opção de locomoção entre os pontos
@@ -129,9 +129,7 @@
     </p>
   </section>
 
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly&channel=2"
-    async></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoPypNmHjVWxUrZ51RqBh00-ku1YkEIYk&callback=initMap&libraries=&v=weekly&channel=2" async></script>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
@@ -146,15 +144,15 @@
 
     //Cria uma variavel para template para ser usado no retorno da API de Hoteis
     var template = `<section class="container-fluid principal">
-    <div class="row" id="{{hotel-id}}">
-      <div class="col-xl-4">
+    <div class="row col-lg-12" id="{{hotel-id}}">
+      <div class="col-lg-4 col-xl-4">
         <div class="card">
           <div class="card-body">
             <img class="card-img-top" src="{{hotel-img}}" id="fotodohotel" alt="Foto do Hotel">
           </div>
         </div>
       </div>
-      <div class="col-xl-4">
+      <div class="col-lg-4 col-xl-4">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title bx_hotel"><i class="fas fa-hotel"></i>{{hotel-nome}}</h5>
@@ -181,7 +179,7 @@
           </div>
         </div>
       </div>
-      <div class="col-xl-4">
+      <div class="col-lg-4 col-xl-4">
         <div class="card">
           <div class="card-body" class=" col-xl-4 cx_iframe" id="map_{{hotels}}">
           </div>
