@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background-color: #f2f2f2;
+  
+}
+
+ul {
+    list-style: none;
+}
+
+a{
+  color: #12324F;
+  list-style: none;
+  text-decoration: none;
+}
+a:hover{
+  color: #F2AE2E;
+}
+
+.navbar-expand-lg {
+    background-color: #0A3150;
+    color: #fff;
+}
+
+.navbar-expand-lg img {
+    height: 1.8em;
+    padding:0 1em;
+}
+
+.navbar-expand-lg a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar-expand-lg a:hover{
+    /* width: 50px; */
+    /* height: 100px; */
+    color: #033E8C;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.container-fluid{
+  height: 13em;
+  background-color: #f9f9f9;
+}
+
+.container-fluid h2{
+  color: #12324F;
+  font-size: 1.8em;
+  font-weight: 700;
+  margin: 0 0 5px 1em;
+  padding: 1em 0 0.5em 0;
+  font-size: 1.8rem;
+}
+
+.container{
+  height: 4em;
+  background-color: #12324F;
+  border-radius: 0.4em;
+}
+
+.form-control, .custom-select{
+  height: 3em;
+}
+
+.btn{
+  width: 14em;
+  background-color: #A62139;
+}
+
+.btn h3{
+  color: #fff;
+}
+
+.btn:hover{
+  background-color: #F2AE2E;
+  color: #fff;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.tipo_de_viagem,
+#tipo_de_viagem,
+#buscar_hoteis,
+#data {
+  /* width: 100%;
+  height: 100%; */
+  /* padding: 3px 5px; */
+  color: #F2AE2E;
+  border: none;
+}
+
+.form-control::placeholder{
+  color: #F2AE2E;
+}
+
+/* conteudo principal */
+.card-img{
+  object-fit: none;
+  object-position: center;
+  width: 100%;
+  max-height: 18em;
+  
+}
+
+.chamada{
+  margin-left: 1em;
+  font-weight: 700;
+  color: #f2f2f2;
+}
+
+.texto-chamada{
+  margin-left: 1.8em;
+  font-size: 1.2em;
+  color: #f2f2f2;
+}
+
+.texto-chamada a{
+  color: #f2f2f2;
+}
+
+.dicas{
+  height: 4em;
+  background-color: #f2f2f2;
+}
+
+.dicas h2{
+    margin-top: 0em;
+}
+
+.dicasuteis{
+  height: 50em;
+}
+
+.card-img-top{
+  width: 100%;
+  height: 15em;
+}
+
+
+p{
+  color: #12324F;
+}
+
+h5{
+  color: #12324F;
+}
+
+i{
+  color: #12324F;
+}
+
+.fa-star{
+color: #F2AE2E;
+}
+
+.estrela_cinza{
+  color: #696969;
+}
+
+.principal{
+  height:18em ;
+  background-color: #f2f2f2;
+}
+
+.card{
+  height: 18em;
+  background-color: #f2f2f2;
+  border: none;
+  /* margin-bottom: 10em; */
+}
+
+.card-img-top img{
+  max-height: 20em;
+}
+
+
+.rodape {
+  margin-top: 25em;
+  /* width: 100%; */
+  height: 4em;
+  background-color: #12324F;
+  color: #f2f2f2;
+}
+
+.midias i{
+  margin: 10px 10px 0;
+  color: #f2f2f2;
+}
+
+.direitos{
+  color: #f2f2f2;
+}
+
+
+@media (max-width: 992px){
+  .navbar-expand-lg img {
+    padding:0 0em;
+}
+
+.container-fluid{
+  height: 24em;
+}
+
+.container-fluid h2{
+  margin-left: 0em;
+}
+
+.container{
+  height: 17em;
+}
+
+.card-img-overlay{
+  margin-top: 4em;
+}
+
+.principal{
+  margin-top: 1em;
+}
+.chamada {
+  margin-top: -2em;
+  margin-left: 0em;
+}
+
+.texto-chamada{
+  margin-left: 0em;
+  font-size: 1.2em;
+  color: #f2f2f2;
+}
+
+
+.dicas h2{
+  margin-left: 0em;
+  margin-top: -1em;
+}
+
+.teste{
+  margin-bottom: 50em;
+  height: 22em;
+}
+
+.rodape {
+  margin-top: 50em;
+  height: 4em;
+}
+
+
+}
